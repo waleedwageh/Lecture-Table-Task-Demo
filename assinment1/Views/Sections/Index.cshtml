@@ -1,0 +1,192 @@
+﻿@model IEnumerable<assinment1.Models.Sections>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstDay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Room)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.course)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.professor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstDay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastDays)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Room.Hall_Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.course.Course_code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.professor.Professor_Id)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Section_Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Section_Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Section_Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Sunday")
+            </th>
+            <th>
+                @Html.DisplayName("Monday")
+            </th>
+            <th>
+                @Html.DisplayName("Tuesday")
+            </th>
+            <th>
+                @Html.DisplayName("Wendseday")
+            </th>
+        
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @if (item.FirstDay == "Sunday" || item.LastDays == "Sunday")
+                {
+                    @Html.DisplayFor(modelItem => item.StartDate.TimeOfDay)
+
+                    @Html.DisplayFor(modelItem => item.EndDate.TimeOfDay)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.course.Course_code)
+                    @Html.DisplayFor(modelItem => item.course.Course_Name)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.professor.Professor_Name)
+
+                    @Html.DisplayFor(modelItem => item.Room.Hall_Code)
+
+
+                }
+            </td>
+            <td>
+                @if (item.FirstDay == "Monday" || item.LastDays == "Monday")
+                {
+                    @Html.DisplayFor(modelItem => item.StartDate.TimeOfDay)
+
+                    @Html.DisplayFor(modelItem => item.EndDate.TimeOfDay)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.course.Course_code)
+                    @Html.DisplayFor(modelItem => item.course.Course_Name)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.professor.Professor_Name)
+
+                    @Html.DisplayFor(modelItem => item.Room.Hall_Code)
+                }
+            </td>
+            
+            <td>
+                @if (item.FirstDay == "Tuesday" || item.LastDays == "Tuesday")
+                {
+                    @Html.DisplayFor(modelItem => item.StartDate.TimeOfDay)
+
+                    @Html.DisplayFor(modelItem => item.EndDate.TimeOfDay)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.course.Course_code)
+                    @Html.DisplayFor(modelItem => item.course.Course_Name)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.professor.Professor_Name)
+
+                    @Html.DisplayFor(modelItem => item.Room.Hall_Code)
+                }
+            </td>
+            <td>
+                @if (item.FirstDay == "Wendseday" || item.LastDays == "Wendseday")
+                {
+                    @Html.DisplayFor(modelItem => item.StartDate.TimeOfDay)
+
+                    @Html.DisplayFor(modelItem => item.EndDate.TimeOfDay)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.course.Course_code)
+                    @Html.DisplayFor(modelItem => item.course.Course_Name)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.professor.Professor_Name)
+
+                    @Html.DisplayFor(modelItem => item.Room.Hall_Code)
+                }
+            </td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
